@@ -1,5 +1,10 @@
 language: ruby
 
+before_install:
+  - gem update --system '2.7.8'
+  - gem uninstall -i $(rvm gemdir)@global -ax bundler
+  - gem install bundler -v '1.17.3'
+
 rvm:
   - 1.9.3-p551 # minimum required by Rails 4.2
   - 2.0.0-p648
@@ -34,10 +39,7 @@ matrix:
 services:
   - postgresql
 
-before_install:
-  - gem update --system '2.7.8'
-  - gem uninstall -i $(rvm gemdir)@global -ax bundler
-  - gem install bundler -v '1.17.3'
+
 
 before_script:
   - cp test/dummy/config/database.yml.travis test/dummy/config/database.yml
