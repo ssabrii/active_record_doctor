@@ -1,10 +1,11 @@
 language: ruby
 
 before_install:
-  - gem update --system '2.7.7'
+  - sudo gem update --system 2.7.7
+  - gem --version
   - gem uninstall -i $(rvm gemdir)@global -ax bundler
   - gem install bundler -v '1.17.3'
-  - gem --version
+  
 
 rvm:
   - 1.9.3-p551 # minimum required by Rails 4.2
