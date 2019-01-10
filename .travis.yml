@@ -35,6 +35,7 @@ services:
   - postgresql
 
 before_install:
+  - gem update --system '2.7.8'
   - gem uninstall -i $(rvm gemdir)@global -ax bundler
   - gem install bundler -v '1.17.3'
 
