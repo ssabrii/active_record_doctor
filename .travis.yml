@@ -35,6 +35,7 @@ services:
   - postgresql
 
 before_install:
+  - gem uninstall -ax bundler
   - gem install bundler -v '1.17.3'
 
 before_script:
