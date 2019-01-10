@@ -35,7 +35,7 @@ services:
   - postgresql
 
 before_install:
-  - gem install bundler
+  - gem install bundler -v '1.17.3'
 
 before_script:
   - cp test/dummy/config/database.yml.travis test/dummy/config/database.yml
